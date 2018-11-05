@@ -1,0 +1,53 @@
+tunes-playlist {
+  color: #eee;
+  background-color: #333;
+  display: block;
+  min-height: 100%;
+  padding: 0 3%;
+  position: absolute;
+  width: 30%;
+
+  nav {
+    margin: auto;
+    padding: 0;
+    width: 180px;
+  }
+}
+
+.albums {
+  list-style: none;
+  padding: 0 2%;
+}
+
+.control {
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0;
+  cursor: pointer;
+  height: 50px;
+  margin: 0;
+  padding: 10px;
+  text-indent: -9999px;
+  width: 55px;
+}
+
+.play {
+  background-image: url('/assets/images/control_pause.png');
+  &:hover { background-image: url('/assets/images/control_pause_hover.png'); }
+}
+
+.pause {
+  background-image: url('/assets/images/control_play.png');
+  &:hover { background-image: url('/assets/images/control_play_hover.png'); }
+}
+
+.prev {
+  background-image: url('/assets/images/control_start.png');
+  &:hover { background-image: url('/assets/images/control_start_hover.png'); }
+}
+
+.next {
+  background-image: url('/assets/images/control_end.png');
+  &:hover { background-image: url('/assets/images/control_end_hover.png'); }
+}
