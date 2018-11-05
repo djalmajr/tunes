@@ -1,0 +1,111 @@
+tunes-playlist {
+  color: #eee;
+  background-color: #333;
+  display: block;
+  min-height: 100%;
+  padding: 0 3%;
+  position: absolute;
+  width: 30%;
+}
+tunes-playlist nav {
+  margin: auto;
+  padding: 0;
+  width: 180px;
+}
+.tunes-playlist-albums {
+  list-style: none;
+  padding: 0 2%;
+}
+.tunes-playlist-control {
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0;
+  cursor: pointer;
+  height: 50px;
+  margin: 0;
+  padding: 10px;
+  text-indent: -9999px;
+  width: 55px;
+}
+.tunes-playlist-play {
+  background-image: url('/assets/images/control_pause.png');
+}
+.tunes-playlist-play:hover {
+  background-image: url('/assets/images/control_pause_hover.png');
+}
+.tunes-playlist-pause {
+  background-image: url('/assets/images/control_play.png');
+}
+.tunes-playlist-pause:hover {
+  background-image: url('/assets/images/control_play_hover.png');
+}
+.tunes-playlist-prev {
+  background-image: url('/assets/images/control_start.png');
+}
+.tunes-playlist-prev:hover {
+  background-image: url('/assets/images/control_start_hover.png');
+}
+.tunes-playlist-next {
+  background-image: url('/assets/images/control_end.png');
+}
+.tunes-playlist-next:hover {
+  background-image: url('/assets/images/control_end_hover.png');
+}
+
+tunes-album {
+  display: inline-block;
+  font-style: italic;
+  list-style: none;
+  margin: 0;
+  padding: 1em 2em;
+  position: relative;
+  width: 80%;
+}
+tunes-album.is-active {
+  background-color: #383838;
+}
+.tunes-album-artist {
+  color: #999;
+  font-style: normal;
+  font-weight: lighter;
+}
+.tunes-album-tracks {
+  margin: 0;
+  padding: 0.5em 0 0 1.5em;
+}
+.tunes-album-track {
+  cursor: pointer;
+  font-style: normal;
+  padding: 0.3em;
+}
+.tunes-album-track.is-active {
+  background-color: #995599;
+}
+.tunes-album-queue {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 16px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 16px;
+}
+
+tunes-library {
+  display: block;
+  margin-left: 36%;
+  padding: 0.1em 2%;
+}
+.tunes-library-albums {
+  list-style: none;
+  padding: 0 2%;
+}
+
+tunes-app {
+  height: auto;
+  min-height: 100%;
+}
+
