@@ -1,4 +1,5 @@
 import cn from "classnames";
+import { autorun } from "mobx";
 import HyperHTMLElement from "hyperhtml-element";
 import withBind from "../mixins/bindAll";
 import withProps from "../mixins/props";
@@ -17,6 +18,10 @@ class TunesAlbum extends withProps(withBind(HyperHTMLElement)) {
 
   get collection() {
     return this.isPlaylist ? playlist : library;
+  }
+
+  created() {
+    autorun(() => this.render());
   }
 
   onClick() {

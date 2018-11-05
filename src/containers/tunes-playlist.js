@@ -1,3 +1,4 @@
+import { autorun } from "mobx";
 import HyperHTMLElement from "hyperhtml-element";
 import withBind from "../mixins/bindAll";
 import styles from "./tunes-playlist.less";
@@ -7,15 +8,19 @@ import "./tunes-album";
 const { wire } = HyperHTMLElement;
 
 class TunesPlaylist extends withBind(HyperHTMLElement) {
-  onToggle() {
+  created() {
+    autorun(() => this.render());
+  }
+
+  onToggleClick() {
     playlist.toggle();
   }
 
-  onNext() {
+  onNextClick() {
     playlist.nextTrack();
   }
 
-  onPrev() {
+  onPrevClick() {
     playlist.prevTrack();
   }
 
@@ -31,15 +36,15 @@ class TunesPlaylist extends withBind(HyperHTMLElement) {
       <nav>
         <button
           class=${`${styles.control} ${styles[playlist.status]}`}
-          onclick=${this.onToggle}
+          onclick=${this.onToggleClick}
         />
         <button
           class=${`${styles.control} ${styles.prev}`}
-          onclick=${this.onPrev}
+          onclick=${this.onPrevClick}
         />
         <button
           class=${`${styles.control} ${styles.next}`}
-          onclick=${this.onNext}
+          onclick=${this.onNextClick}
         />
       </nav>
       <ul class=${styles.albums}>
