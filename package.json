@@ -17,7 +17,7 @@
   "scripts": {
     "changelog": "run-changelog",
     "deploy": "run-deploy",
-    "start": "run-start HOT=true",
+    "start": "run-start --hot",
     "build": "run-build",
     "postversion": "run-postversion",
     "version": "run-version"
