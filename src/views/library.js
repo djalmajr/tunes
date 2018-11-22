@@ -1,16 +1,13 @@
-import Album from "./tunes-album.js";
+import Albums from "./albums.js";
 
-export default (render, props) => render`
-  <div class="tunes-library">
+const albumsWire = hyperHTML.wire();
+
+export default render => render`
+  <div class="library">
     <h1>Music Library</h1>
-    <ul class="tunes-library--albums">
-      ${props.library.map(album =>
-        Album(wire(album, ":library-album"), {
-          ...props,
-          data: { album },
-        })
-      )}
-    </ul>
+    ${Albums(albumsWire, {
+      wireID: ":library-album",
+      albums: store.library,
+    })}
   </div>
 `;
-

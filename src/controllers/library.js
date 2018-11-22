@@ -1,7 +1,6 @@
-import { decorate, observable } from "mobx";
-import Album from "./album";
+import Album from "../models/album";
 
-class Albums {
+class Library {
   constructor(albums = []) {
     this.albums = albums.map(album => new Album(album));
   }
@@ -31,4 +30,4 @@ class Albums {
   }
 }
 
-export default decorate(Albums, { albums: observable });
+export default Library;

@@ -1,7 +1,9 @@
-import facade from "./facade.js";
-import App from "./views/App.js";
+import store from "./store.js";
+import App from "./views/app.js";
 
-const appRender = hyperHTML.wire();
-const html = hyperHTML.bind(document.querySelector("#__wrapper__"));
+const container = document.querySelector("#__wrapper__");
+const appWire = hyperHTML.wire();
+const html = hyperHTML.bind(container);
 
-facade.init(props => html`${App(appRender, props)}`);
+// prettier-ignore
+store.init(() => html`${App(appWire)}`);

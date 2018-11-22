@@ -1,10 +1,5 @@
-.tunes-library {
+.library {
   display: block;
   margin-left: 36%;
-  padding: 0.1em 2%;
-}
-
-.tunes-library--albums {
-  list-style: none;
-  padding: 0 2%;
+  padding: .1em 2%;
 }

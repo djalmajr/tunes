@@ -18,6 +18,21 @@
   font-weight: lighter;
 }
 
+.album-tracks {
+  margin: 0;
+  padding: .5em 0 0 1.5em;
+}
+
+.album-track {
+  cursor: pointer;
+  font-style: normal;
+  padding: .3em;
+}
+
+.album-track.is-active {
+  background-color: #995599;
+}
+
 .album-queue {
   background: transparent;
   border: 0;

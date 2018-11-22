@@ -1,30 +1,34 @@
-import Album from "./album.js";
+import Albums from "./albums.js";
+import store from "../store.js";
 
-export default (render, props) => render`
-  <div class="playlist">
-    <h1>Playlist</h1>
-    <nav>
-      <button
-        class="playlist-control is-${props.status}"
-        onclick=${props.onPlayPause}
-      />
-      <button
-        class="playlist-control is-prev"
-        onclick=${props.onPrevTrack}
-      />
-      <button
-        class="playlist-control is-next"
-        onclick=${props.onNextTrack}
-      />
-    </nav>
-    <ul class="playlist-albums">
-      ${props.playlist.map(album =>
-        Album(wire(album, ":playlist-album"), {
-          ...props,
-          data: { album, showtracks: true },
-        })
-      )}
-    </ul>
-  </div>
-`;
+const albumsWire = hyperHTML.wire();
 
+export default render => {
+  const status = store.isPlaying ? "" : "";
+
+  return render`
+    <div class="playlist">
+      <h1>Playlist</h1>
+      <nav>
+        <button
+          class="playlist-control is-${status}"
+          onclick=${() => store.playPause()}
+        />
+        <button
+          class="playlist-control is-prev"
+          onclick=${() => store.prevTrack()}
+        />
+        <button
+          class="playlist-control is-next"
+          onclick=${() => store.nextTrack()}
+        />
+      </nav>
+      ${Albums(albumsWire, {
+        wireID: ":playlist-album",
+        albums: store.playlist,
+        showtracks: true,
+      })}
+      </ul>
+    </div>
+  `;
+};

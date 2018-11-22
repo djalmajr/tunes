@@ -1,12 +1,12 @@
 import Playlist from "./playlist.js";
 import Library from "./library.js";
 
-const playlist = hyperHTML.wire();
-const library = hyperHTML.wire();
+const playlistWire = hyperHTML.wire();
+const libraryWire = hyperHTML.wire();
 
-export default (render, props) => render`
+export default render => render`
   <div class="app">
-    ${Playlist(playlist, props)}
-    ${Library(library, props)}
+    ${Playlist(playlistWire)}
+    ${Library(libraryWire)}
   </div>
 `;

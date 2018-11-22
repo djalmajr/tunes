@@ -1,7 +1,6 @@
-import { decorate, observable } from "mobx";
-import Albums from "./albums";
+import Library from "./library";
 
-class Playlist extends Albums {
+class Playlist extends Library {
   get currentAlbum() {
     return this.albums.length ? this.albums[this.currentAlbumIndex] : null;
   }
@@ -95,9 +94,4 @@ class Playlist extends Albums {
   }
 }
 
-export default decorate(Playlist, {
-  currentAlbumIndex: observable,
-  currentTrackIndex: observable,
-  playlist: observable,
-  status: observable,
-});
+export default Playlist;

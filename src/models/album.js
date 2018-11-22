@@ -1,5 +1,3 @@
-import { decorate, observable } from "mobx";
-
 class Album {
   constructor(album) {
     this.artist = album.artist;
@@ -20,8 +18,4 @@ class Album {
   }
 }
 
-export default decorate(Album, {
-  artist: observable,
-  title: observable,
-  tracks: observable,
-});
+export default Album;
