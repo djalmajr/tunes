@@ -42,8 +42,8 @@
     "conventional-changelog-cli": "^2.0.11",
     "gh-pages": "^2.0.1",
     "live-server": "^1.2.0",
-    "uglifycss": "^0.0.29",
-    "uglifyjs": "^2.4.11"
+    "uglify-js": "^3.4.9",
+    "uglifycss": "^0.0.29"
   },
   "optionalDependencies": {
     "babel-eslint": "^10.0.1",
