@@ -1,4 +1,7 @@
-import "./containers/tunes-app";
+import facade from "./facade.js";
+import App from "./views/App.js";
 
-const container = document.querySelector("#__wrapper__");
-container.innerHTML = "<tunes-app></tunes-app>";
+const appRender = hyperHTML.wire();
+const html = hyperHTML.bind(document.querySelector("#__wrapper__"));
+
+facade.init(props => html`${App(appRender, props)}`);

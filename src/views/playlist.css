@@ -1,4 +1,4 @@
-tunes-playlist {
+.playlist {
   color: #eee;
   background-color: #333;
   display: block;
@@ -6,20 +6,20 @@ tunes-playlist {
   padding: 0 3%;
   position: absolute;
   width: 30%;
-
-  nav {
-    margin: auto;
-    padding: 0;
-    width: 180px;
-  }
 }
 
-.albums {
+.playlist nav {
+  margin: auto;
+  padding: 0;
+  width: 180px;
+}
+
+.playlist-albums {
   list-style: none;
   padding: 0 2%;
 }
 
-.control {
+.playlist-control {
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
@@ -32,22 +32,35 @@ tunes-playlist {
   width: 55px;
 }
 
-.play {
+.playlist-control.is-play {
   background-image: url('assets/images/control_pause.png');
-  &:hover { background-image: url('assets/images/control_pause_hover.png'); }
 }
 
-.pause {
+.playlist-control.is-play:hover {
+  background-image: url('assets/images/control_pause_hover.png');
+}
+
+.playlist-control.is-pause {
   background-image: url('assets/images/control_play.png');
-  &:hover { background-image: url('assets/images/control_play_hover.png'); }
 }
 
-.prev {
+.playlist-control.is-pause:hover {
+  background-image: url('assets/images/control_play_hover.png');
+}
+
+.playlist-control.is-prev {
   background-image: url('assets/images/control_start.png');
-  &:hover { background-image: url('assets/images/control_start_hover.png'); }
 }
 
-.next {
-  background-image: url('assets/images/control_end.png');
-  &:hover { background-image: url('assets/images/control_end_hover.png'); }
+.playlist-control.is-prev:hover {
+  background-image: url('assets/images/control_start_hover.png');
 }
+
+.playlist-control.is-next {
+  background-image: url('assets/images/control_end.png');
+}
+
+.playlist-control.is-next:hover {
+  background-image: url('assets/images/control_end_hover.png');
+}
+

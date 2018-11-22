@@ -1,0 +1,10 @@
+.album-track {
+  cursor: pointer;
+  font-style: normal;
+  padding: .3em;
+}
+
+.album-track.is-active {
+  background-color: #995599;
+}
+

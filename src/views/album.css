@@ -1,4 +1,4 @@
-tunes-album {
+.album {
   display: inline-block;
   font-style: italic;
   list-style: none;
@@ -6,34 +6,19 @@ tunes-album {
   padding: 1em 2em;
   position: relative;
   width: 80%;
-
-  &:global(.is-active) {
-    background-color: #383838;
-  }
 }
 
-.artist {
+.album.is-active {
+  background-color: #383838;
+}
+
+.album-artist {
   color: #999;
   font-style: normal;
   font-weight: lighter;
 }
 
-.tracks {
-  margin: 0;
-  padding: .5em 0 0 1.5em;
-}
-
-.track {
-  cursor: pointer;
-  font-style: normal;
-  padding: .3em;
-
-  &:global(.is-active) {
-    background-color: #995599;
-  }
-}
-
-.queue {
+.album-queue {
   background: transparent;
   border: 0;
   cursor: pointer;
