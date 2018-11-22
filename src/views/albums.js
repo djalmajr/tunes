@@ -8,13 +8,7 @@ export default (render, props = {}) => {
 
   return render`
     <ul class="albums">
-      ${albums.map(album =>
-        Album(wire(album, wireID), {
-          album,
-          showtracks,
-          isActive: store.isAlbumActive(album),
-        })
-      )}
+      ${albums.map(album => Album(wire(album, wireID), { album, showtracks }))}
     </ul>
   `;
 };

@@ -1,4 +1,5 @@
 import Albums from "./albums.js";
+import store from "../store.js";
 
 const albumsWire = hyperHTML.wire();
 

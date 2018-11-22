@@ -1,4 +1,4 @@
-import Library from "./library";
+import Library from "./library.js";
 
 class Playlist extends Library {
   get currentAlbum() {

@@ -2,17 +2,17 @@ import Library from "./controllers/library.js";
 import Playlist from "./controllers/playlist.js";
 import albums from "./albums.js";
 
-let _update;
-const _library = new Library(albums);
-const _playlist = new Playlist();
+let _update, _library, _playlist;
 
 export default {
   init(render) {
     _update = render;
+    _library = new Library(albums);
+    _playlist = new Playlist();
 
     const methods = Object.keys(this)
       .filter(prop => typeof this[prop] === "function")
-      .filter(prop => !prop.match(/^(init|is).*/g));
+      .filter(prop => !prop.match(/^(init|is|get).*/g));
 
     for (const prop of methods) {
       this[prop] = (() => {
@@ -20,6 +20,8 @@ export default {
         return (...args) => (method(...args), _update());
       })();
     }
+
+    _update();
   },
 
   // Getters

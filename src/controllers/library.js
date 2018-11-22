@@ -1,4 +1,4 @@
-import Album from "../models/album";
+import Album from "../models/album.js";
 
 class Library {
   constructor(albums = []) {

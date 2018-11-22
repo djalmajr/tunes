@@ -33,34 +33,33 @@
 }
 
 .playlist-control.is-play {
-  background-image: url('assets/images/control_pause.png');
+  background-image: url('images/control_pause.png');
 }
 
 .playlist-control.is-play:hover {
-  background-image: url('assets/images/control_pause_hover.png');
+  background-image: url('images/control_pause_hover.png');
 }
 
 .playlist-control.is-pause {
-  background-image: url('assets/images/control_play.png');
+  background-image: url('images/control_play.png');
 }
 
 .playlist-control.is-pause:hover {
-  background-image: url('assets/images/control_play_hover.png');
+  background-image: url('images/control_play_hover.png');
 }
 
 .playlist-control.is-prev {
-  background-image: url('assets/images/control_start.png');
+  background-image: url('images/control_start.png');
 }
 
 .playlist-control.is-prev:hover {
-  background-image: url('assets/images/control_start_hover.png');
+  background-image: url('images/control_start_hover.png');
 }
 
 .playlist-control.is-next {
-  background-image: url('assets/images/control_end.png');
+  background-image: url('images/control_end.png');
 }
 
 .playlist-control.is-next:hover {
-  background-image: url('assets/images/control_end_hover.png');
+  background-image: url('images/control_end_hover.png');
 }
-

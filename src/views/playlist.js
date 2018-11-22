@@ -4,14 +4,14 @@ import store from "../store.js";
 const albumsWire = hyperHTML.wire();
 
 export default render => {
-  const status = store.isPlaying ? "" : "";
+  const status = store.isPlaying ? "play" : "pause";
 
   return render`
     <div class="playlist">
       <h1>Playlist</h1>
       <nav>
         <button
-          class="playlist-control is-${status}"
+          class=${`playlist-control is-${status}`}
           onclick=${() => store.playPause()}
         />
         <button

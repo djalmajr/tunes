@@ -24,7 +24,7 @@
     "build-js": "echo '/* eslint-disable */' > dist/bundle.js && browserify ./es2015/**.js | uglifyjs -mc warnings=false >> dist/bundle.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "concat-css": "find src -type f -name '*.css' -exec cat {} ';' >> dist/style.css",
-    "copy": "rm -rf dist; mkdir dist; cp public/* dist; cp node_modules/hyperhtml/umd.js dist/hyperhtml.min.js",
+    "copy": "rm -rf dist; mkdir dist; cp -r public/* dist; cp node_modules/hyperhtml/umd.js dist/hyperhtml.min.js",
     "deploy": "npm run build && gh-pages -d dist",
     "postversion": "git push && git push --tags",
     "serve": "live-server --open=dist .",

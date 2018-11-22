@@ -1,13 +1,13 @@
 import store from "../store.js";
 
-const tracksWire = hyperHTML.wire();
+const { wire } = hyperHTML;
 
 const Track = (render, { album, index, track }) => {
-  const isActive = store.isTrackActive(track);
+  const isActive = store.isTrackActive(album, index);
 
   return render`
     <li
-      class="album-track${isActive ? " is-active" : ""}"
+      class=${`album-track${isActive ? " is-active" : ""}`}
       onclick=${() => store.changeTrack(album, index)}
     >
       ${track.title}
@@ -30,22 +30,23 @@ const Tracks = (render, { album, showtracks, tracks }) => {
 };
 
 export default (render, props = {}) => {
-  const { album, isActive, showtracks } = props;
+  const { album, showtracks } = props;
   const image = showtracks ? "remove" : "add";
-  const addOrRemove = showtracks ? "addToPlaylist" : "removeFromPlaylist";
+  const isActive = showtracks && store.isAlbumActive(album);
+  const addOrRemove = showtracks ? "removeFromPlaylist" : "addToPlaylist";
 
   return render`
-    <div class="album${isActive ? " is-active" : ""}">
+    <div class=${`album${isActive ? " is-active" : ""}`}>
       <li>
         <button
           class="album-queue"
-          onclick=${() => store[addOrRemove]()}
+          onclick=${() => store[addOrRemove](album)}
         >
-          <img src="${`assets/images/${image}.png`}" />
+          <img src="${`images/${image}.png`}" />
         </button>
         <span class="album-title">${album.title}</span>
         <span class="album-artist">${album.artist}</span>
-        ${Tracks(tracksWire, {
+        ${Tracks(wire(album, ":album-tracks"), {
           album,
           showtracks,
           tracks: album.tracks,
